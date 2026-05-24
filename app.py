@@ -28,13 +28,15 @@ st.sidebar.caption("Trained on 1500 student records using Linear Regression")
 
 st.subheader("Enter Student Details")
 
-study  = st.number_input("📖 Study Hours per Day  (e.g. 5.0)",  min_value=0.0, max_value=11.0, value=None, placeholder="Enter hours like 5.0")
-attend = st.number_input("🏫 Attendance % (e.g. 75.0)",         min_value=0.0, max_value=100.0, value=None, placeholder="Enter percentage like 75.0")
-sleep  = st.number_input("😴 Sleep Hours per Day  (e.g. 7.0)",  min_value=2.0, max_value=10.0, value=None, placeholder="Enter hours like 7.0")
+study  = st.number_input("📖 Study Hours per Day  (e.g. 5.0)",  min_value=0.0, max_value=11.0,step=1, value=None, placeholder="Enter hours like 5.0")
+attend = st.number_input("🏫 Attendance % (e.g. 75.0)",         min_value=0.0, max_value=100.0,step=1, value=None, placeholder="Enter percentage like 75.0")
+sleep  = st.number_input("😴 Sleep Hours per Day  (e.g. 7.0)",  min_value=2.0, max_value=10.0,step=1, value=None, placeholder="Enter hours like 7.0")
 
 if st.button("Predict Score", use_container_width=True):
     if study is None or attend is None or sleep is None:
         st.warning("⚠️ Please fill in all three fields before predicting.")
+    elif study + sleep > 20:
+        st.error("⚠️ Study Hours + Sleep Hours cannot exceed 20 hrs. Please enter realistic values.")
     else:
         pred = float(np.clip(model.predict([[study, attend, sleep]])[0], 0, 100))
         st.success(f"🎯 Predicted Score: **{pred:.1f} / 100**")
