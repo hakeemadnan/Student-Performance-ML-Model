@@ -6,7 +6,7 @@ A machine learning web app that predicts student exam scores based on study habi
 
 ## 🔗 Live Demo
 
-👉 [Click here to open the app](#) *(replace with your Streamlit link)*
+👉  https://studentscorepredicto.streamlit.app/
 
 ---
 
@@ -42,9 +42,9 @@ The goal is to help identify students who may need academic support before exams
 
 | Feature | Description | Range |
 |---|---|---|
-| `Study_Hours` | Hours studied per day | 1 – 10 |
-| `Attendance_Pct` | Class attendance percentage | 40 – 100% |
-| `Sleep_Hours` | Hours of sleep per day | 4 – 9 |
+| `Study_Hours` | Hours studied per day | 1 – 11 |
+| `Attendance_Pct` | Class attendance percentage | 0 – 100% |
+| `Sleep_Hours` | Hours of sleep per day | 2 – 10 |
 | `Score` | Exam score *(target)* | 20 – 100 |
 
 ---
@@ -107,6 +107,4 @@ Open `http://localhost:8501` in your browser.
 
 ## 👨‍💻 Author
 
-Made by **[Your Name]**  
-B.Tech / BCA / BSc — *[Your College Name]*  
-*[Your Year / Semester]*
+Made by **Adnan Mushtaq**  
